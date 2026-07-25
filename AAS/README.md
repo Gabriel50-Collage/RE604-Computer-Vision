@@ -5,9 +5,9 @@ Project ini melakukan Optical Character Recognition (OCR) pada plat nomor kendar
 ## Model yang Digunakan: ##
 Model VLM: qwen2.5-vl-7b-instruct, dijalankan lewat LMStudio sebagai local server yang meniru format OpenAI API (/v1/chat/completions).
 
-Cara Kerja Singkat
-Baca file label (format YOLO: x_center y_center width height plate_text) untuk mendapatkan koordinat bounding box plat nomor beserta ground truth-nya.
-Crop gambar sesuai bounding box, ditambah sedikit padding supaya teks plat tidak terpotong. Kalau hasil crop terlalu kecil, gambar akan di-resize dulu supaya lebih mudah dibaca model.
-Gambar hasil crop dikirim ke LMStudio dalam format base64, dibarengi prompt yang meminta model hanya membalas nomor platnya saja.
-Hasil prediksi dibersihkan (hanya huruf & angka, di-uppercase), lalu dibandingkan dengan ground truth menggunakan metrik Character Error Rate (CER).
-Semua hasil disimpan ke results.csv dengan kolom: image, ground_truth, prediction, CER_score.
+Cara Kerja Program:
+1. Baca file label (format YOLO: x_center y_center width height plate_text) untuk mendapatkan koordinat bounding box plat nomor beserta ground truth-nya.
+2. Crop gambar sesuai bounding box, ditambah sedikit padding supaya teks plat tidak terpotong. Kalau hasil crop terlalu kecil, gambar akan diresize supaya lebih mudah dibaca oleh model.
+3. Gambar hasil crop dikirim ke LMStudio dalam format base64, dibarengi prompt yang meminta model hanya membalas nomor platnya saja.
+4. Hasil prediksi dibersihkan, lalu dibandingkan dengan ground truth menggunakan metrik Character Error Rate (CER).
+5. Semua hasil disimpan ke results.csv dengan kolom: image, ground_truth, prediction, CER_score.
