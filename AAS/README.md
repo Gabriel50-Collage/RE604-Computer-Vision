@@ -1,4 +1,4 @@
-OCR Plat Nomor Kendaraan menggunakan VLM (LMStudio + Python)
+### OCR Plat Nomor Kendaraan menggunakan VLM (LMStudio + Python) ###
 
 Project ini melakukan Optical Character Recognition (OCR) pada plat nomor kendaraan menggunakan Visual Language Model (VLM) yang dijalankan secara lokal lewat LMStudio, lalu diintegrasikan dengan Python. Dataset yang dipakai adalah Indonesian License Plate Dataset (folder test).
 
