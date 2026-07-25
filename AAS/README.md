@@ -13,7 +13,7 @@ Cara Kerja Program:
 5. Semua hasil disimpan ke results.csv dengan kolom: image, ground_truth, prediction, CER_score.
 
 ## Persiapan Menjalankan Program ##
-1. Install dependencies
+1. Install dependencies:
    pip install requests pillow
 
 2. Jalankan LMStudio
